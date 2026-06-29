@@ -1,0 +1,282 @@
+:root {
+  --accent: #37d7ff;
+  --accent2: #9a5cff;
+  --hot: #ff4da6;
+  --good: #48f2a5;
+  --bg: #050814;
+  --panel: rgba(16, 27, 51, 0.72);
+  --panel2: rgba(4, 8, 17, 0.62);
+  --line: rgba(145,160,190,0.18);
+  --text: #f8fbff;
+  --muted: #91a0be;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 18% 6%, color-mix(in srgb, var(--accent), transparent 55%), transparent 22rem),
+    radial-gradient(circle at 90% 15%, color-mix(in srgb, var(--accent2), transparent 60%), transparent 24rem),
+    radial-gradient(circle at 80% 95%, color-mix(in srgb, var(--hot), transparent 70%), transparent 25rem),
+    linear-gradient(135deg, #050814, #0b1227 55%, #071321);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(55,215,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(55,215,255,0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at 50% 20%, black, transparent 80%);
+}
+
+.shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: max(18px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
+}
+
+.panel, .card {
+  background: linear-gradient(135deg, rgba(21,31,53,0.82), rgba(7,16,31,0.72));
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.42);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255,255,255,0.10), transparent 38%, rgba(55,215,255,0.06));
+  pointer-events: none;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin: 0.2rem 0;
+  font-size: clamp(2.35rem, 8vw, 4.45rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  margin: 0 0 16px;
+  letter-spacing: -0.025em;
+}
+
+p {
+  color: var(--muted);
+}
+
+.orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, white, var(--accent) 28%, var(--accent2) 48%, transparent 70%);
+  box-shadow: 0 0 55px var(--accent), 0 0 90px color-mix(in srgb, var(--accent2), transparent 45%);
+  opacity: 0.95;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 14px 0;
+}
+
+.card {
+  padding: 17px;
+}
+
+.card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.panel {
+  padding: 19px;
+  margin-top: 14px;
+}
+
+button, select {
+  font: inherit;
+}
+
+button {
+  border: 1px solid color-mix(in srgb, var(--accent), white 12%);
+  color: white;
+  border-radius: 19px;
+  padding: 16px 18px;
+  font-weight: 950;
+  box-shadow: 0 0 26px color-mix(in srgb, var(--accent), transparent 74%);
+}
+
+.primary {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent), transparent 55%), color-mix(in srgb, var(--accent2), transparent 72%));
+  width: 100%;
+}
+
+.secondary {
+  margin-top: 10px;
+  width: 100%;
+  background: rgba(255,77,166,0.12);
+  border-color: rgba(255,77,166,0.62);
+}
+
+.hint {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.sticks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  text-align: center;
+}
+
+.stick {
+  position: relative;
+  width: 154px;
+  height: 154px;
+  margin: 8px auto;
+  border-radius: 50%;
+  border: 2px solid rgba(145,160,190,0.24);
+  background:
+    linear-gradient(rgba(55,215,255,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(55,215,255,0.08) 1px, transparent 1px),
+    radial-gradient(circle, transparent 0 38%, rgba(255,255,255,0.06) 39% 41%, transparent 42%),
+    rgba(0,0,0,0.24);
+  background-size: 20px 20px, 20px 20px, auto, auto;
+  box-shadow: inset 0 0 30px rgba(55,215,255,0.08);
+}
+
+.dot {
+  position: absolute;
+  left: 68px;
+  top: 68px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 22px var(--accent), 0 0 38px var(--accent);
+}
+
+code {
+  color: var(--muted);
+}
+
+.triggers {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.triggers label {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-weight: 850;
+}
+
+progress {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.pill {
+  border-radius: 16px;
+  padding: 13px 8px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(11,20,40,0.92), rgba(6,13,26,0.92));
+  border: 1px solid rgba(145,160,190,0.17);
+  font-weight: 950;
+}
+
+.pill.active {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-color: white;
+  color: #020812;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent), transparent 42%);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  color: var(--muted);
+  margin: 12px 0;
+}
+
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+input[type="color"], select {
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 14px;
+  background: rgba(0,0,0,0.30);
+  color: white;
+  padding: 9px;
+}
+
+@media (max-width: 680px) {
+  .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sticks {
+    grid-template-columns: 1fr;
+  }
+}

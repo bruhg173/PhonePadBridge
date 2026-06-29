@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>PhonePad WebBridge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero panel">
+      <div>
+        <div class="eyebrow">No Xcode mode</div>
+        <h1>PhonePad WebBridge</h1>
+        <p>Pair your controller to iPhone, keep this page open, then stream input to your PC.</p>
+      </div>
+      <div class="orb" id="orb"></div>
+    </section>
+
+    <section class="status-grid">
+      <div class="card">
+        <span>WebSocket</span>
+        <strong id="socketStatus">Disconnected</strong>
+      </div>
+      <div class="card">
+        <span>Gamepad</span>
+        <strong id="padStatus">Waiting</strong>
+      </div>
+      <div class="card">
+        <span>Packets</span>
+        <strong id="packetCount">0</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <button id="startButton" class="primary">Start Bridge</button>
+      <button id="stopButton" class="secondary">Stop</button>
+      <p class="hint">After tapping Start, press any button on the controller so Safari exposes it.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Live Input</h2>
+      <div class="sticks">
+        <div>
+          <p>Left Stick</p>
+          <div class="stick"><div class="dot" id="leftDot"></div></div>
+          <code id="leftText">0.00, 0.00</code>
+        </div>
+        <div>
+          <p>Right Stick</p>
+          <div class="stick"><div class="dot" id="rightDot"></div></div>
+          <code id="rightText">0.00, 0.00</code>
+        </div>
+      </div>
+
+      <div class="triggers">
+        <label>LT <progress id="lt" max="100" value="0"></progress></label>
+        <label>RT <progress id="rt" max="100" value="0"></progress></label>
+      </div>
+
+      <div class="buttons" id="buttons"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Settings</h2>
+      <label class="row">
+        Deadzone
+        <input id="deadzone" type="range" min="0" max="0.3" step="0.01" value="0.08" />
+        <span id="deadzoneValue">0.08</span>
+      </label>
+
+      <label class="row">
+        Send rate
+        <select id="sendRate">
+          <option value="60">60 Hz</option>
+          <option value="90">90 Hz</option>
+          <option value="120" selected>120 Hz</option>
+        </select>
+      </label>
+
+      <label class="row">
+        Accent
+        <input id="accent" type="color" value="#37d7ff" />
+      </label>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
