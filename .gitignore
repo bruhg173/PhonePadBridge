@@ -1,0 +1,42 @@
+# Build output
+bin/
+obj/
+publish/
+artifacts/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / private runtime output
+*.log
+logs/
+crashdumps/
+
+# Local tools
+adb.exe
+AdbWinApi.dll
+AdbWinUsbApi.dll
+
+# NuGet
+*.nupkg
+packages/
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
