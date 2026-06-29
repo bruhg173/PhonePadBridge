@@ -25,9 +25,9 @@ The Windows app hosts a local webpage. The phone opens the webpage, reads the co
 - Local web controller bridge
 - Virtual Xbox 360 output
 - Low-latency update path
-- Dark sci-fi GUI
 - One-click Windows single-file EXE build script
 - No accounts, no cloud service, no telemetry
+- This works for basically any bluetooth controller that can connect to your phone
 
 ## Requirements
 
@@ -36,6 +36,7 @@ The Windows app hosts a local webpage. The phone opens the webpage, reads the co
 - Windows 10/11
 - .NET 8 SDK
 - ViGEmBus installed for virtual Xbox controller output
+- ViGEmBus probably wont need to be installed but if for some reason it doesnt work try downloading it and then if that doesnt fix it lmk
 - Android Platform Tools / `adb.exe` for Android USB mode
 
 ### Android
